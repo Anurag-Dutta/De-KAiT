@@ -4,16 +4,6 @@
 
 ### Data-Efficient Kolmogorov–Arnold Image Transformer for Visual Classification of Encrypted and Obfuscated Network Traffic Flows
 
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python)](https://www.python.org/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-2.4-orange?logo=pytorch)](https://pytorch.org/)
-[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
-[![IEEE TMLCN](https://img.shields.io/badge/Submitted-IEEE%20TMLCN-blueviolet)]()
-[![DRDO Funded](https://img.shields.io/badge/Funded-DRDO%20India-green)]()
-
-**Anurag Dutta¹ · Suneha Raj Molaka² · Sangita Roy³ · Rajat Subhra Chakraborty¹**
-
-¹ Dept. of CSE, IIT Kharagpur &nbsp;|&nbsp; ² Dept. of EE, IIT Kharagpur &nbsp;|&nbsp; ³ Dept. of CSE, TIET Patiala
-
 </div>
 
 ---
@@ -46,6 +36,23 @@ representation, De-KAiT is a lightweight, data-efficient vision transformer comb
 
 ---
 
+## Why Visual? State-of-the-Art Comparison
+
+Visual feature-based methods consistently outperform both statistical and sequence-based methods
+across all three traffic conditions (Regular, Tor-encrypted, VPN-protected). Among all visual
+methods, **De-KAiT achieves the highest accuracy**, as shown in the radar plots below.
+
+<div align="center">
+  <img src="FIGS/sota.png" alt="State-of-the-Art Comparison Radar Plots" width="92%"/>
+  <br/>
+  <em>Figure 2: Radar plots comparing top-performing statistical (C4.5, SVM, Bayes, Regression,
+  Perceptron), sequence-based (DP-SAE, DP-GRU, BLJAN, MH-Net, DP-CNN), and visual
+  (mini-FlowPic, 3D-CNN, 2D-CNN, FlowPic, <strong>De-KAiT</strong>) methods on the
+  ISCXTOR-nonTOR and ISCXVPN-nonVPN datasets across Regular, Tor, and VPN flows.</em>
+</div>
+
+---
+
 ## Recurrence Plots
 
 Each network flow is converted to a **224×224 single-channel recurrence plot** using two
@@ -67,9 +74,24 @@ Critically, **broad class-specific global geometry is preserved** even under Tor
 VPN protection, where local textures change significantly.
 
 <div align="center">
-  <img src="FIGS/rp.png" alt="Recurrence Plots" width="85%"/>
+  <img src="FIGS/rp.png" alt="Recurrence Plot Pipeline" width="85%"/>
   <br/>
-  <em>Figure 2: Recurrence plots generation pipeline.</em>
+  <em>Figure 3: Recurrence plot construction pipeline — from raw network flow to
+  224×224 single-channel structured image.</em>
+</div>
+
+
+
+
+<br/>
+
+
+<div align="center">
+  <img src="FIGS/recplots.png" alt="Recurrence Plot Samples" width="92%"/>
+  <br/>
+  <em>Figure 4: Recurrence plots across five application categories (Browsing, Chat, File-Transfer,
+  Video, Audio/VoIP) under (a) Regular, (b) Tor-encrypted, and (c) VPN-protected traffic conditions,
+  with four representative samples per category per condition.</em>
 </div>
 
 ---
