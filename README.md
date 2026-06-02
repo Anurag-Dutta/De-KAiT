@@ -69,9 +69,7 @@ VPN protection, where local textures change significantly.
 <div align="center">
   <img src="FIGS/rp.png" alt="Recurrence Plots" width="85%"/>
   <br/>
-  <em>Figure 2: Recurrence plots across five application categories (Browsing, Chat, File-Transfer,
-  Video, VoIP) under Regular, Tor-encrypted, and VPN-protected traffic conditions, with four
-  representative samples per category.</em>
+  <em>Figure 2: Recurrence plots generation pipeline.</em>
 </div>
 
 ---
@@ -86,6 +84,8 @@ VPN protection, where local textures change significantly.
 Both variants are evaluated at encoder depths **L ∈ {2, 4, 6, 8}**, with KAN-FFN expansion ratio
 `r = 2.0`, patch size `p = 16`, per-head dimension `d_h = 32`, and dropout `0.1`.
 
----
+For each experimental configuration, both the **best-validation checkpoint** (`_best.pth`) and the
+**final epoch checkpoint** (`_last.pth`) are provided to support direct inference, fine-tuning, and
+reproducibility verification.
 
-## Repository Structure
+> 📦 **[Download Pre-Trained Weights (Google Drive)](https://drive.google.com/drive/folders/16-FH9uwxcavNENKFX9RsC34alaDvsBkD?usp=sharing)**
